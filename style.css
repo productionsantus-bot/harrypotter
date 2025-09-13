@@ -1,0 +1,586 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #b8b8b8;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    background-color: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 25px;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    color: #e0e0e0;
+    width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+.search-box input::placeholder {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    color: #ffd700;
+    cursor: pointer;
+}
+
+/* Hero Sections */
+.hero, .page-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgb(255,215,0);stop-opacity:0.1" /><stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:0" /></radialGradient></defs><rect width="100%" height="100%" fill="url(%23grad)"/></svg>');
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero h1, .page-hero h1 {
+    font-size: 3.5rem;
+    color: #ffd700;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.hero p, .page-hero p {
+    font-size: 1.2rem;
+    color: #c0c0c0;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(45deg, #ffed4e, #ffd700);
+}
+
+/* Content Sections */
+.intro-section, .content-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.intro-text, .text-content {
+    flex: 1;
+}
+
+.intro-text h2, .text-content h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.text-content h3 {
+    font-size: 1.8rem;
+    color: #ffed4e;
+    margin: 2rem 0 1rem;
+}
+
+.intro-text p, .text-content p {
+    font-size: 1.1rem;
+    color: #b8b8b8;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.intro-image, .origin-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.magic-book-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 100, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.magic-book-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 100, 0, 0.4);
+}
+
+.destiny-book-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(139, 69, 19, 0.4), 0 0 50px rgba(255, 215, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.destiny-book-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px rgba(139, 69, 19, 0.6), 0 0 70px rgba(255, 215, 0, 0.4);
+}
+
+.book-glow, .glowing-book, .ancient-books {
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Grid Layouts */
+.cards-grid, .domains-grid, .houses-grid, .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore-card, .domain-card, .house-card, .quote-card {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.explore-card:hover, .domain-card:hover, .house-card:hover, .quote-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.explore-card h3, .domain-card h3, .house-card h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.explore-card p, .domain-card p, .house-card p {
+    color: #b8b8b8;
+    line-height: 1.6;
+}
+
+/* Characters Grid */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.character-card {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.character-card.dark {
+    border-color: rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, rgba(60, 30, 30, 0.9), rgba(40, 20, 20, 0.9));
+}
+
+.character-image {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.character-card h3 {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.character-card p {
+    color: #b8b8b8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.character-traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.trait {
+    background-color: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* House Specific Colors */
+.house-card.gryffindor { border-color: rgba(190, 30, 45, 0.5); }
+.house-card.hufflepuff { border-color: rgba(238, 203, 75, 0.5); }
+.house-card.ravenclaw { border-color: rgba(34, 85, 136, 0.5); }
+.house-card.slytherin { border-color: rgba(29, 116, 64, 0.5); }
+
+.house-crest {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* Quotes */
+.quote-card {
+    text-align: left;
+    position: relative;
+    padding: 2.5rem 2rem 2rem;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.quote-card blockquote {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.quote-card cite {
+    color: #ffd700;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+/* Buttons */
+.learn-more, .reveal-btn, .discover-house, .load-more, .explore-btn, .view-all {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.learn-more:hover, .reveal-btn:hover, .discover-house:hover, .load-more:hover, .explore-btn:hover, .view-all:hover {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Sections */
+.explore-section, .heroes-section, .dark-forces-section, .houses-section, .quotes-section, .domains-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.explore-section h2, .heroes-section h2, .dark-forces-section h2, .houses-section h2, .quotes-section h2, .domains-section h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* Quiz and Interactive Elements */
+.sorting-container, .quiz-container {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.question {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.question h4 {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.option {
+    background: rgba(60, 60, 60, 0.8);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+/* Magic and Artifacts */
+.incantations-grid, .wands-grid, .artifacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.incantation-card, .wand-card, .artifact-card {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.spell-image, .wand-image, .artifact-image {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Explore More */
+.explore-more, .more-quotes {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(40, 40, 40, 0.8));
+}
+
+.explore-more h2, .more-quotes h2 {
+    color: #ffd700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.explore-more p, .more-quotes p {
+    color: #b8b8b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.explore-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .search-box input {
+        width: 250px;
+    }
+    
+    .hero h1, .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .intro-section, .content-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .content-section.reverse {
+        flex-direction: column;
+    }
+    
+    .cards-grid, .characters-grid, .houses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .options {
+        grid-template-columns: 1fr;
+    }
+    
+    .explore-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Background Animations */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
